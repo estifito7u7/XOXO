@@ -1,0 +1,41 @@
+{% extends "account/base.html" %}
+{% load tailwind_filters %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+
+<div class="h-screen md:flex">
+	<div
+		class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-rose-400 to-rose-500 i justify-around items-center hidden">
+		<div>
+			<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_gjmecwii.json"  background="transparent"  speed="1"  style="width: 90%; height: 80%; z-index:'100'" loop  autoplay></lottie-player>
+		</div>
+		<div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+		<div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
+	</div>
+	<div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
+<form class="signup bg-white" id="signup_form" method="post" action="{% url 'account_signup' %} " enctype='multipart/form-data'>
+        {%csrf_token%}
+			<h1 class="text-gray-800 font-bold text-2xl mt-1">Hello Again!</h1>
+			<p class="text-sm font-normal text-gray-600 ">Welcome Back</p>
+			<div class="flex items-center border-2  px-3 rounded-2xl mb-1">
+				
+      </div>
+			{{form|crispy}}
+             {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}        
+							<button type="submit" class="block w-full bg-rose-400 hover:bg-rose-500 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Registrar</button>
+							<a  href = "{% url 'account_reset_password' %}"class="text-sm ml-2 hover:text-blue-500 cursor-pointer">Forgot Password ?</a>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
+
+

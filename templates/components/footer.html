@@ -1,0 +1,22 @@
+{% load static %}
+<div class="mt-auto p-6 text-sm text-gray-500 dark:text-dark-txt">
+    
+    <a class="hover:text-rose-400" href="#">Privacy</a>
+    <span> </span>
+    <a class="hover:text-rose-400"  href="#">Terms</a>
+    <span> </span>
+    <a class="hover:text-rose-400" href="#">Billing</a>
+    <span> </span>
+    <a class="hover:text-rose-400"  href="#">Subscriptions</a>
+    
+    <span> </span>
+    <a  class="hover:text-rose-400"  href="#">Cookies</a>
+    <span> </span>
+
+    {% if user.is_authenticated %}
+    <a class="hover:text-rose-400 " href="{% url 'account_logout' %}">Logout</a>
+    {% endif %}
+
+
+    <p class="cursor-default text-xs text-gray-100 dark:text-dark-txt ">Sachsen Cob&uumlrg Gotha &copy; 2021</p>
+</div>

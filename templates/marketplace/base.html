@@ -1,0 +1,84 @@
+{% load static %}
+{% load tailwind_tags %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+	<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@4"></script>
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
+    <!--Boxicons-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--JQuery-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body >
+   
+       {% block navbar %}{% endblock navbar %}
+  
+    <!-- NAVBAR -->
+  
+
+    <!--CONTENT-->
+    
+        <!--left sidebar-->
+        
+     
+
+
+        {% block messages %}{% include 'messages.html' %}{% endblock messages %}
+        {% block content %}{% endblock content %}
+ 
+
+        <!--right sidebar-->
+      <!-- <div class="w-1/5 pt-16 h-full hidden xl:block px-4 fixed top-0 right-0">
+        {% if user.is_authenticated %}
+        {% block right_sidebar %}{% endblock right_sidebar %}
+        {% endif %}
+        </div>  -->
+
+    
+
+    <!--RIGHT SIDEBAR-->
+
+    <!-- FOOTER -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="{% static '/js/app.js' %}"> </script>
+  
+
+  
+    {% block javascript %}
+    
+    
+    {% endblock javascript %}
+
+
+
+
+</body>
+</html>

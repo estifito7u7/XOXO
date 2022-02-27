@@ -1,0 +1,185 @@
+
+{%extends "marketplace/base.html"%}
+
+{% block navbarmarket%}{%endblock%}
+
+{% block  content%}
+
+
+<div class="mx-auto container flex items-center" id="nav">
+        <div class="w-full pt-2 p-4">
+
+            <div class="mx-auto md:p-6 md:w-1/2">
+                <div class="flex flex-wrap justify-between">
+                    <h1 class="text-2xl text-rose-400  hover:text-rose-500 transition duration-500 p-4">
+                        <i class="fas fa-sign-in-alt fa-fw fa-lg"></i>
+                        Insertar Producto
+                    </h1>
+                    <a href="{% url 'HomeMarketplace'%}" class="mt-8 text-rose-400 hover:text-rose-500 transition duration-500">
+                        <svg class=" w-6 h-6 inline-block align-bottom" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        Volver al Inicio
+                        <i class="fas fa-chevron-circle-left fa-fw"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+
+                   <form  method="post"  enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-8">
+                            <label for="username" class="block text-gray-700 text-sm font-bold mb-2 text-center">
+                                <span class="text-red-500">&nbsp;*</span>
+                                Portada
+                            </label>
+                            <div class="mt-1 relative rounded-md shadow-sm text-center">
+                               
+                               
+                                {{form.thumbnail}} 
+                            </div>
+                        
+                        </div>
+
+                        <div class="relative flex justify-center my-4">
+                            <span class="px-2 bg-white dark:bg-dark-second text-sm dark:text-dark-txt text-gray-500">
+                            Product Details
+                            </span>
+                        </div>
+
+                        <div class="mb-8">
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                <span class="text-red-500">&nbsp;*</span>
+                                Nombre
+                            </label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                </div>
+                                
+                                {{form.name}}
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                <span class="text-red-500">&nbsp;*</span>
+                                Descripcion
+                            </label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                </div>
+                                
+                                {{form.description}}
+                            </div>
+                        </div>
+                      
+                        
+                        <label for="photo" class=" block text-sm font-medium dark:text-dark-txt text-gray-700 text-center">
+                            Price, 100 = $1,00 | 1,000 = $10 | 10,000 = $100
+                            </label>
+
+                            <div class="mb-8">
+                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                    <span class="text-red-500">&nbsp;*</span>
+                                    Precio
+                                </label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    </div>
+                                    
+                                    {{form.price}}
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                    <span class="text-red-500">&nbsp;*</span>
+                                    Slug
+                                </label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    </div>
+                                    {{form.slug}}
+                                </div>
+                            </div>
+
+                            {{form.errors}}
+
+                        
+
+        
+
+
+                                
+                            <div class="mb-8">
+                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                    <span class="text-red-500">&nbsp;*</span>
+                                    URL (Optional: paid url products)
+                                </label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    </div>
+                                   
+                                    {{form.content_url}}
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                    <span class="text-red-500">&nbsp;*</span>
+                                    Upload Content
+                                </label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    </div>
+                                   
+                                    {{form.content_file}}
+                                </div>
+                            </div>
+
+
+                            <div class="mb-8">
+                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                    <span class="text-red-500">&nbsp;*</span>
+                                    Publish or Draft?
+                                </label>
+
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    </div>
+                                  
+                                     {{form.active}}
+                                </div>
+                            </div>
+
+                
+                        <div class="mb-4 text-center w-full block">
+                            <button class="transition duration-500 bg-rose-500 hover:bg-rose-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block w-full" type="submit">
+                                Login
+                            </button>
+                        </div>
+                        <hr>
+                      
+                    </form> 
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{%endblock%}
+
+{% block footer%}{%endblock%}
+
+{% block javascript%}
+
+
+
+{%endblock%}
